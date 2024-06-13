@@ -15,7 +15,7 @@
   --fw-normal: 600;
   --fw-bold: 800;
 
-  --radius: ;
+  --radius: 0.5rem;
 }
 
 body[data-theme="dark"] {

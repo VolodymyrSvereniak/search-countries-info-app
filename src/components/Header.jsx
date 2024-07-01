@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container } from "./Container";
 import { IoMoon, IoMoonOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { currentTheme, toggleTheme } from "../slices/toggleSlice";
+import { currentTheme, toggleTheme } from "../slices/themeSlice";
 import { useEffect } from "react";
 
 const HeaderElement = styled.header`

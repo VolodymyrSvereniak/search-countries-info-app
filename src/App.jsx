@@ -1,9 +1,9 @@
+import { useEffect } from "react";
 import Header from "./components/Header";
 import Controls from "./components/Controls";
 import Main from "./components/Main";
 import CountriesList from "./components/CountriesList";
-import Card from "./components/Card";
-import { useEffect } from "react";
+import { countriesCard } from "./components/countriesCard/countriesCard";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getCountries,
@@ -14,7 +14,6 @@ import {
 function App() {
   const dispatch = useDispatch();
   const { countries, loading, error } = useSelector(selectedCountries);
-  
 
   useEffect(() => {
     dispatch(getCountries());
@@ -27,29 +26,7 @@ function App() {
       <Header />
       <Main>
         <Controls />
-        <CountriesList>
-          {countries.map((country) => {
-            const countriesInfo = {
-              img: country.flags.png,
-              name: country.name.common,
-              info: [
-                {
-                  title: 'Population',
-                  description: country.population.toLocaleString('en-US')
-                },
-                {
-                  title: 'Region',
-                  description: country.region
-                },
-                {
-                  title: 'Capital',
-                  description: country.capital[0]
-                }
-              ],
-            };
-            return <Card key={country.cca3} {...countriesInfo}/>
-          })}
-        </CountriesList>
+        <CountriesList>{countriesCard(countries)}</CountriesList>
       </Main>
     </div>
   );

@@ -4,9 +4,10 @@ import Select from "react-select";
 const CustomSelect = styled(Select).attrs({
   styles: {
     control: (provided, state) => (
-      console.log(state),
+      // console.log(state),
       {
         ...provided,
+        cursor: "pointer",
         backgroundColor: "var(--colors-ui-base)",
         borderRadius: "var(--radius)",
         padding: "0.25rem",
@@ -18,7 +19,7 @@ const CustomSelect = styled(Select).attrs({
     ),
     singleValue: (provided) => ({
       ...provided,
-      color: 'var(--colors-text)',
+      color: "var(--colors-text)",
     }),
     dropdownIndicator: (provided) => ({
       ...provided,
@@ -35,12 +36,13 @@ const CustomSelect = styled(Select).attrs({
       backgroundColor: state.isSelected
         ? "var(--colors-bg)"
         : "var(--colors-ui-base)",
+      transform: 'translateY(-5px)'
     }),
     menu: (provided) => ({
       ...provided,
       backgroundColor: "var(--colors-bg)",
-      height: '11.0625rem'
-    })
+      height: "172px",
+    }),
   },
 })`
   font-family: var(--family);

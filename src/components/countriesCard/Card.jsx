@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.article`
-  width: 15rem;
+  width: 15.4rem;
   background-color: var(--colors-ui-base);
   border-radius: var(--radius);
   box-shadow: var(--shadow);

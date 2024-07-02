@@ -7,15 +7,16 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
-
+  
   @media (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
   }
-
+  
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
+    place-items: center;
   }
 `;
 

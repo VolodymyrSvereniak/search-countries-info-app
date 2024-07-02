@@ -1,30 +1,59 @@
 import styled from "styled-components";
 
+const Wrapper = styled.article`
+  width: 15rem;
+  background-color: var(--colors-ui-base);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  overflow: hidden;
+`;
 
-const Wrapper = styled.article``;
+const CardImage = styled.img`
+  display: block;
+  width: 100%;
+  height: 9.375rem;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+`;
 
-const CardImage = styled.img``;
+const CardBody = styled.div`
+  padding: 0.9375rem;
+`;
 
-const CardBody = styled.div``;
+const CardTitle = styled.h3`
+  padding: 0.7rem 0.3rem 0;
+  margin: 0;
+  font-weight: var(--fw-bold);
+`;
 
-const CardTitle = styled.h3``;
+const CardInfo = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0 1rem;
+  font-size: var(--fs-sm);
+`;
 
-const CardInfo = styled.ul``;
+const CardInfoItem = styled.li`
+  font-weight: var(--fw-light);
+  /* line-height: 1.5; */
+  padding: 0.3rem;
+`;
 
-const CardInfoItem = styled.li``;
+const CardInfoTitle = styled.b`
+  font-weight: var(--fw-bold);
+`;
 
 export default function Card({ img, name, info = [], onClick }) {
-  
-
   return (
     <Wrapper>
-      <CardImage />
+      <CardImage src={img} alt={name} />
       <CardBody>
         <CardTitle>{name}</CardTitle>
         <CardInfo>
           {info.map((el) => (
             <CardInfoItem key={el.title}>
-              <b>{el.title}</b>: {el.description}
+              <CardInfoTitle>{el.title}:</CardInfoTitle> {el.description}
             </CardInfoItem>
           ))}
         </CardInfo>

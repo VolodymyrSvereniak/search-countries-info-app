@@ -44,9 +44,9 @@ const CardInfoTitle = styled.b`
   font-weight: var(--fw-bold);
 `;
 
-export default function Card({ img, name, info = [], onClick }) {
+export default function Card({ img, name, info = [], handleNavigate }) {
   return (
-    <Wrapper>
+    <Wrapper onClick={handleNavigate}>
       <CardImage src={img} alt={name} />
       <CardBody>
         <CardTitle>{name}</CardTitle>

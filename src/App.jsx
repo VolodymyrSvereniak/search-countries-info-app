@@ -3,14 +3,18 @@ import Main from "./components/Main";
 import HomePage from "./pages/HomePage";
 import Details from "./pages/Details";
 import NotFound from "./pages/NotFound";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  
   return (
     <div className="App">
       <Header />
       <Main>
-        <HomePage/>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/details/:name" element={<Details />} />
+          <Route path="/notfound" element={<NotFound />} />
+        </Routes>
       </Main>
     </div>
   );

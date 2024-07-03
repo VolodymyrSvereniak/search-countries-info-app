@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import { Container } from "./Container";
-import { IoMoon, IoMoonOutline } from "react-icons/io5";
-import { useDispatch, useSelector } from "react-redux";
-import { currentTheme, toggleTheme } from "../slices/themeSlice";
 import { useEffect } from "react";
+import { IoMoon, IoMoonOutline } from "react-icons/io5";
+import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { Container } from "./Container";
+import { currentTheme, toggleTheme } from "../slices/themeSlice";
+import { Link } from "react-router-dom";
 
 const HeaderElement = styled.header`
   box-shadow: var(--shadow);
@@ -17,8 +18,8 @@ const Wrapper = styled.div`
   padding: 1.5rem 0;
 `;
 
-const Title = styled.a.attrs({
-  href: "/",
+const Title = styled(Link).attrs({
+  to: "/",
 })`
   color: var(--colors-text);
   font-size: var(--fs-md);

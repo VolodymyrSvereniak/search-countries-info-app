@@ -12,7 +12,7 @@ import {
 export default function HomePage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { countries, loading, error } = useSelector(selectedCountries);
+  const { countries, status, error } = useSelector(selectedCountries);
 
   const handleNavigate = (name) => navigate(`/details/${name}`);
   

@@ -40,7 +40,7 @@ const CustomSelect = styled(Select).attrs({
       ...provided,
       backgroundColor: "var(--colors-bg)",
       height: "10.75rem",
-      width: "15.625rem"
+      width: "15.5rem"
     }),
   },
 })`

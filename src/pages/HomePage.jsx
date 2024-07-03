@@ -8,7 +8,8 @@ import {
   selectedCountries,
 } from "../slices/countriesSlice/countriesSlice";
 
-export default function HomePage(props) {
+
+export default function HomePage() {
   const dispatch = useDispatch();
   const { countries, loading, error } = useSelector(selectedCountries);
 

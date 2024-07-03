@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
 import axios from "axios";
 import { ALL_COUNTRIES } from "./countriesConfig";
 
@@ -36,9 +36,11 @@ const countriesSlice = createSlice({
   },
 });
 
-export const selectedCountries = (state) => {
-  const { countries, loading, error } = state.countries;
+export const countriesSelector = (state) => state.countries;
+
+export const selectedCountries = createSelector(countriesSelector, (countriesSelectorState) => {
+  const { countries, loading, error } = countriesSelectorState;
   return { countries, loading, error };
-};
+});
 
 export default countriesSlice.reducer;

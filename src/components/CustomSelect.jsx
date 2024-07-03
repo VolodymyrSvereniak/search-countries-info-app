@@ -3,8 +3,7 @@ import Select from "react-select";
 
 const CustomSelect = styled(Select).attrs({
   styles: {
-    control: (provided, state) => (
-      // console.log(state),
+    control: (provided) => (
       {
         ...provided,
         cursor: "pointer",

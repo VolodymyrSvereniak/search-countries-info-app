@@ -17,8 +17,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     flex-direction: column;
+    margin-top: 1rem;
     }
 `;
 

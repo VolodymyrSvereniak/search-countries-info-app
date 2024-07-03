@@ -9,17 +9,17 @@ const InputContainer = styled.label`
 
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  width: 17.5rem;
-  
+  width: 246px;
+
   @media (max-width: 768px) {
     margin-bottom: 1rem;
-      }
-      `;
+  }
+`;
 
 const Input = styled.input.attrs({
-    type: "search",
-    placeholder: "Search for a country...",
-    })`
+  type: "search",
+  placeholder: "Search for a country...",
+})`
   margin-left: 2rem;
   border: none;
   outline: none;
@@ -30,7 +30,7 @@ const Input = styled.input.attrs({
 export default function Search({ search, setSearch }) {
   return (
     <InputContainer>
-      <IoSearch />
+      <IoSearch style={{position: 'absolute'}}/>
       <Input value={search} onChange={(e) => setSearch(e.target.value)} />
     </InputContainer>
   );

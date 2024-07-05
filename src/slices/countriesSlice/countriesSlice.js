@@ -8,6 +8,9 @@ import { ALL_COUNTRIES } from "./countriesConfig";
 
 const initialState = {
   countries: [],
+  filteredCountries: [],
+  currentNameFilter: "",
+  currentRegionFilter: "",
   status: "idle", // idle, loading, succeeded, failed
   error: null,
 };
@@ -20,7 +23,8 @@ export const getCountries = createAsyncThunk(
       console.log(result.data);
       return result.data;
     } catch (e) {
-      throw Error('Failed to load list of countries')
+      console.log(e.message);
+      throw Error("Failed to load list of countries");
     }
   }
 );
@@ -28,7 +32,19 @@ export const getCountries = createAsyncThunk(
 const countriesSlice = createSlice({
   name: "countries",
   initialState,
-  reducers: {},
+  reducers: {
+    filterCountries: (state, action) => {
+      state.currentNameFilter = action.payload;
+      state.filteredCountries = state.countries.filter(country =>
+        country.name.common.toLowerCase().includes(state.currentNameFilter.toLowerCase()))
+    },
+    filterByRegion: (state, action) => {
+      state.currentRegionFilter = action.payload;
+      state.filteredCountries = state.countries.filter(country =>
+        country.region.includes(state.currentRegionFilter)
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(
       getCountries.pending,
@@ -40,6 +56,7 @@ const countriesSlice = createSlice({
         (state, action) => {
           state.status = "succeeded";
           state.countries = action.payload;
+          state.filteredCountries = action.payload;
         },
         builder.addCase(getCountries.rejected, (state, action) => {
           state.status = "failed";
@@ -50,13 +67,16 @@ const countriesSlice = createSlice({
   },
 });
 
+export const { filterCountries, filterByRegion } = countriesSlice.actions;
+
 export const countriesSelector = (state) => state.countries;
 
 export const selectedCountries = createSelector(
   countriesSelector,
   (countriesSelectorState) => {
-    const { countries, loading, error } = countriesSelectorState;
-    return { countries, loading, error };
+    const { filteredCountries, countriesRegion, loading, error } =
+      countriesSelectorState;
+    return { filteredCountries, countriesRegion, loading, error };
   }
 );
 

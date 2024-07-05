@@ -27,11 +27,11 @@ const Input = styled.input.attrs({
   background-color: var(--colors-ui-base);
 `;
 
-export default function Search({ search, setSearch }) {
+export default function Search({ value, onChange }) {
   return (
     <InputContainer>
       <IoSearch style={{position: 'absolute'}}/>
-      <Input value={search} onChange={(e) => setSearch(e.target.value)} />
+      <Input value={value} onChange={onChange} />
     </InputContainer>
   );
 }

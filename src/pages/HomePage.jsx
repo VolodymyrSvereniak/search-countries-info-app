@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Controls from "../components/Controls";
 import CountriesList from "../components/CountriesList";
 import { countriesCard } from "../components/countriesCard/countriesCard";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   getCountries,
@@ -12,17 +12,17 @@ import {
 export default function HomePage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { countries, status, error } = useSelector(selectedCountries);
+  const { filteredCountries, status, error } = useSelector(selectedCountries);
 
   const handleNavigate = (name) => navigate(`/details/${name}`);
-  
-  const countriesCardList = countriesCard(countries, handleNavigate);
-  
+
+  const countriesCardList = countriesCard(filteredCountries, handleNavigate);
+
   useEffect(() => {
-    if (!countries.length && status !== 'loading') {
+    if (!filteredCountries.length && status !== "loading") {
       dispatch(getCountries());
     }
-  }, [countries, status]);
+  }, [filteredCountries, status]);
 
   return (
     <>

@@ -11,7 +11,7 @@ const CustomSelect = styled(Select).attrs({
       padding: "0.25rem",
       border: "none",
       boxShadow: "var(--shadow)",
-      width: "15.375rem",
+      width: "15.365rem",
       height: "3.125rem",
       paddingLeft: "1rem",
     }),
@@ -40,14 +40,13 @@ const CustomSelect = styled(Select).attrs({
       ...provided,
       backgroundColor: "var(--colors-bg)",
       height: "10.75rem",
-      width: "15.5rem"
+      width: "15.40rem"
     }),
   },
 })`
   font-family: var(--family);
-  width: 11.875rem;
   border: none;
-  width: 15.375rem;
+  width: 15.30rem;
 `;
 
 export default CustomSelect;

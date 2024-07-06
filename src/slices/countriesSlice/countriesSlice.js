@@ -9,8 +9,6 @@ import { ALL_COUNTRIES } from "./countriesConfig";
 const initialState = {
   countries: [],
   filteredCountries: [],
-  currentNameFilter: "",
-  currentRegionFilter: "",
   status: "idle", // idle, loading, succeeded, failed
   error: null,
 };
@@ -34,14 +32,13 @@ const countriesSlice = createSlice({
   initialState,
   reducers: {
     filterCountries: (state, action) => {
-      state.currentNameFilter = action.payload;
-      state.filteredCountries = state.countries.filter(country =>
-        country.name.common.toLowerCase().includes(state.currentNameFilter.toLowerCase()))
+      state.filteredCountries = state.countries.filter((country) =>
+        country.name.common.toLowerCase().includes(action.payload.toLowerCase())
+      );
     },
     filterByRegion: (state, action) => {
-      state.currentRegionFilter = action.payload;
-      state.filteredCountries = state.countries.filter(country =>
-        country.region.includes(state.currentRegionFilter)
+      state.filteredCountries = state.countries.filter((country) =>
+        country.region.includes(action.payload)
       );
     },
   },

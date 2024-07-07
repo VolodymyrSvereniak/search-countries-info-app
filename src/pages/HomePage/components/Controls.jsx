@@ -5,7 +5,7 @@ import CustomSelect from "./CustomSelect";
 import {
   filterCountries,
   filterByRegion,
-} from "../slices/countriesSlice/countriesSlice";
+} from "../../../slices/countriesSlice/countriesSlice";
 import { useDispatch } from "react-redux";
 
 const options = [

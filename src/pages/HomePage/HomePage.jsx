@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import Controls from "../components/Controls";
-import CountriesList from "../components/CountriesList";
-import { countriesCard } from "../components/countriesCard/countriesCard";
+import Controls from "./components/Controls";
+import CountriesList from "./components/CountriesList";
+import { countriesCard } from "./components/countriesCard/countriesCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   getCountries,
   selectedCountries,
-} from "../slices/countriesSlice/countriesSlice";
+} from "../../slices/countriesSlice/countriesSlice";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export default function HomePage() {
     if (!filteredCountries.length && status !== "loading") {
       dispatch(getCountries());
     }
-  }, [filteredCountries, status]);
+  }, [filteredCountries, status, dispatch]);
 
   return (
     <>

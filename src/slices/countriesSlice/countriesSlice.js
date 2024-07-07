@@ -20,8 +20,8 @@ export const getCountries = createAsyncThunk(
       const result = await axios.get(ALL_COUNTRIES);
       console.log(result.data);
       return result.data;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      console.log(error.message);
       throw Error("Failed to load list of countries");
     }
   }
@@ -66,7 +66,7 @@ const countriesSlice = createSlice({
 
 export const { filterCountries, filterByRegion } = countriesSlice.actions;
 
-export const countriesSelector = (state) => state.countries;
+const countriesSelector = (state) => state.countries;
 
 export const selectedCountries = createSelector(
   countriesSelector,

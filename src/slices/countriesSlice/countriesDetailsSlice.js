@@ -17,6 +17,7 @@ export const getCountriesDetails = createAsyncThunk(
   async (name) => {
     try {
       const result = await axios.get(searchByCountry(name));
+      console.log(result.data)
       return result.data;
     } catch (error) {
       console.log(error.message);

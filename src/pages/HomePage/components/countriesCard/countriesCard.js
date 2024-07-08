@@ -1,7 +1,7 @@
 import Card from "./Card";
 
 export const countriesCard = (countries, handleNavigate) =>
-  countries.map((country) => {
+  countries?.map((country) => {
     const countriesInfo = {
       img: country.flags.png,
       name: country.name.common,

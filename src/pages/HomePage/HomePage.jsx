@@ -19,10 +19,10 @@ export default function HomePage() {
   const countriesCardList = countriesCard(filteredCountries, handleNavigate);
 
   useEffect(() => {
-    if (!filteredCountries.length && status !== "loading") {
+    if (!filteredCountries.length) {
       dispatch(getCountries());
     }
-  }, [filteredCountries, status, dispatch]);
+  }, [filteredCountries, dispatch]);
 
   return (
     <>

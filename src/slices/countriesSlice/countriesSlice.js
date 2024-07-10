@@ -71,9 +71,8 @@ const countriesSelector = (state) => state.countries;
 export const selectedCountries = createSelector(
   countriesSelector,
   (countriesSelectorState) => {
-    const { filteredCountries, loading, error } =
-      countriesSelectorState;
-    return { filteredCountries, loading, error };
+    const { filteredCountries, error } = countriesSelectorState;
+    return { filteredCountries, error };
   }
 );
 

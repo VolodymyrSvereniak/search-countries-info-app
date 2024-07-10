@@ -2,31 +2,47 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getCountriesDetails,
-  selectedCountriesDetails,
-} from "../../../slices/countriesSlice/countriesDetailsSlice";
+  getBorderCountryDetails,
+  getCountryDetails,
+  selectedCountryDetails,
+} from "../../../slices/countriesSlice/countryDetailsSlice";
 import DetailsInfo from "./DetailsInfo";
 
 const Info = () => {
   const dispatch = useDispatch();
   const { name } = useParams();
-  const { countries, status } = useSelector(selectedCountriesDetails);
-  console.log(countries);
+  const { country } = useSelector(selectedCountryDetails);
+  console.log(country);
   console.log(name);
 
+  function handleBorderCountry(code) {
+    dispatch(getBorderCountryDetails(code));
+  }
+
   useEffect(() => {
-    dispatch(getCountriesDetails(name));
+    dispatch(getCountryDetails(name));
   }, [name, dispatch]);
 
-  const countriesInfo = countries.map((c) => ({
-        name: c.name.common,
-        img: c.flags.png,
-        population: c.population,
-        region: c.region,
-        borders: c.borders,
-      }));
+  const countryInfo = country.map((с) => ({
+    img: с.flags.png,
+    name: с.name.common,
+    nativeName: с.name.nativeName,
+    population: с.population,
+    region: с.region,
+    subregion: с.subregion,
+    capital: с.capital,
+    topLevelDomain: с.tld,
+    currencies: с.currencies,
+    languages: с.languages,
+    borders: с.borders,
+  }));
 
-  return <DetailsInfo {...countriesInfo[0]} />;
+  return (
+    <DetailsInfo
+      {...countryInfo[0]}
+      handleBorderCountry={handleBorderCountry}
+    />
+  );
 };
 
 export default Info;

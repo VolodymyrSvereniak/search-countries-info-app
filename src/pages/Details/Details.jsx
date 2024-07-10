@@ -12,7 +12,7 @@ export default function Details() {
   return (
     <>
       <BackButton handleBackNavigation={handleBackNavigation} />
-      <Info/>
+      <Info />
     </>
   );
 }

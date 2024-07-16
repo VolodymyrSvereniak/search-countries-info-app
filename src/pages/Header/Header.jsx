@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../../components/Container";
 import { currentTheme, toggleTheme } from "../../slices/themeSlice";
 import { Link } from "react-router-dom";
+import { getCountries } from "../../slices/countriesSlice/countriesSlice";
 
 const HeaderElement = styled.header`
   box-shadow: var(--shadow);
@@ -51,6 +52,10 @@ export default function Header() {
 
   console.log(theme);
 
+  function handleCountriesReset() {
+    dispatch(getCountries())
+  }
+
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
   }, [theme]);
@@ -59,7 +64,7 @@ export default function Header() {
     <HeaderElement>
       <Container>
         <Wrapper>
-          <Title>Where in the world?</Title>
+          <Title onClick={handleCountriesReset}>Where in the world?</Title>
           <ThemeSwitcher onClick={() => dispatch(toggleTheme())}>
             {theme === "light" ? (
               <MoonOutline size="16px"/>

@@ -23,18 +23,18 @@ const Info = () => {
     dispatch(getCountryDetails(name));
   }, [name, dispatch]);
 
-  const countryInfo = country.map((с) => ({
-    img: с.flags.png,
-    name: с.name.common,
-    nativeName: с.name.nativeName,
-    population: с.population,
-    region: с.region,
-    subregion: с.subregion,
-    capital: с.capital,
-    topLevelDomain: с.tld,
-    currencies: с.currencies,
-    languages: с.languages,
-    borders: с.borders,
+  const countryInfo = country.map((c) => ({
+    img: c.flags.png,
+    name: c.name.common,
+    nativeName: c.name.nativeName,
+    population: c.population.toLocaleString("en-US"),
+    region: c.region,
+    subregion: c.subregion,
+    capital: c.capital,
+    topLevelDomain: c.tld,
+    currencies: c.currencies,
+    languages: c.languages,
+    borders: c.borders,
   }));
 
   return (

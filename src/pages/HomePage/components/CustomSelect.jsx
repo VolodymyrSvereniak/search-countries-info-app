@@ -23,6 +23,10 @@ const CustomSelect = styled(Select).attrs({
       ...provided,
       color: "var(--colors-text)",
     }),
+    indicatorSeparator: (provided) => ({
+      ...provided,
+      display: "none",
+    }),
     clearIndicator: (provided) => ({
       ...provided,
       color: "var(--colors-text)",

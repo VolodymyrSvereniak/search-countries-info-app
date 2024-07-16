@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { useEffect } from "react";
+import { getBorderCountriesNames } from "../../../slices/countriesSlice/countryDetailsSlice";
+import { useDispatch } from "react-redux";
 
 const Container = styled.section`
   padding: 3rem 0;
@@ -107,17 +110,28 @@ export default function DetailsInfo({
   languages = [],
   borders = [],
   handleBorderCountry,
+  borderCountriesNames = [],
 }) {
+  const dispatch = useDispatch();
   const nativeNameDestructure = Object.values(nativeName)?.map(
     (native) => native.common
   );
+  const nativeNameValue = nativeNameDestructure[0];
   const languagesDestructure = Object.values(languages).join(", ");
+  const bordersDestructure = (border) => {
+    return borderCountriesNames?.map((c) => {
+      if (c.cca3 == border) {
+        return c.name.common;
+      }
+    });
+  };
   const currenciesDestructure = Object.values(Object.values(currencies))
     .map((c) => c.name)
     .join(", ");
-  const nativeNameValue = nativeNameDestructure[0];
 
-  console.log(languagesDestructure);
+  useEffect(() => {
+    dispatch(getBorderCountriesNames(borders?.join(",")));
+  }, [borders, dispatch, getBorderCountriesNames]);
 
   return (
     <Container>
@@ -167,7 +181,7 @@ export default function DetailsInfo({
           {borders.length ? (
             borders?.map((b) => (
               <BorderCountry key={b} onClick={() => handleBorderCountry(b)}>
-                {b}
+                {bordersDestructure(b)}
               </BorderCountry>
             ))
           ) : (

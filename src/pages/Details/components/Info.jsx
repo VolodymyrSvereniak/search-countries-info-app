@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getBorderCountryDetails,
   getCountryDetails,
+  getBorderCountryDetails,
   selectedCountryDetails,
 } from "../../../slices/countriesSlice/countryDetailsSlice";
 import DetailsInfo from "./DetailsInfo";
@@ -11,17 +11,8 @@ import DetailsInfo from "./DetailsInfo";
 const Info = () => {
   const dispatch = useDispatch();
   const { name } = useParams();
-  const { country } = useSelector(selectedCountryDetails);
+  const { country, borderCountriesNames } = useSelector(selectedCountryDetails);
   console.log(country);
-  console.log(name);
-
-  function handleBorderCountry(code) {
-    dispatch(getBorderCountryDetails(code));
-  }
-
-  useEffect(() => {
-    dispatch(getCountryDetails(name));
-  }, [name, dispatch]);
 
   const countryInfo = country.map((c) => ({
     img: c.flags.png,
@@ -37,10 +28,20 @@ const Info = () => {
     borders: c.borders,
   }));
 
+  function handleBorderCountry(code) {
+    dispatch(getBorderCountryDetails(code));
+  }
+
+  useEffect(() => {
+    dispatch(getCountryDetails(name));
+  }, [name, dispatch]);
+
+
   return (
     <DetailsInfo
       {...countryInfo[0]}
       handleBorderCountry={handleBorderCountry}
+      borderCountriesNames={borderCountriesNames}
     />
   );
 };

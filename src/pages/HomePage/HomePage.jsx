@@ -8,12 +8,11 @@ import {
   getCountries,
   selectedCountries,
 } from "../../slices/countriesSlice/countriesSlice";
-import LoadingCircle from "../../components/LoadingCircle";
 
 export default function HomePage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { filteredCountries, status } = useSelector(selectedCountries);
+  const { filteredCountries } = useSelector(selectedCountries);
 
   const handleNavigate = (name) => navigate(`/details/${name}`);
 
@@ -24,10 +23,6 @@ export default function HomePage() {
       dispatch(getCountries());
     }
   }, [filteredCountries, dispatch]);
-
-  if (status === "loading") {
-    return <LoadingCircle />;
-  }
 
   return (
     <>

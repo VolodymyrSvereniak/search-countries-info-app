@@ -1,9 +1,12 @@
-import Header from "./pages/Header/Header"
+import Header from "./pages/Header/Header";
 import Main from "./components/Main";
-import HomePage from "./pages/HomePage/HomePage";
-import Details from "./pages/Details/Details";
-import NotFound from "./pages/NotFound";
 import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import LoadingCircle from "./components/LoadingCircle";
+
+const Details = lazy(() => import("./pages/Details/Details"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
@@ -11,9 +14,30 @@ function App() {
       <Header />
       <Main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/details/:name" element={<Details />} />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<LoadingCircle />}>
+                <HomePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/details/:name"
+            element={
+              <Suspense fallback={<LoadingCircle />}>
+                <Details />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense>
+                <NotFound />
+              </Suspense>
+            }
+          />
         </Routes>
       </Main>
     </div>

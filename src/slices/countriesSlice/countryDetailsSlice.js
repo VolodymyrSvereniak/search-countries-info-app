@@ -91,8 +91,8 @@ const countryDetailsSelector = (state) => state.countryDetails;
 export const selectedCountryDetails = createSelector(
   countryDetailsSelector,
   (selectedCountryDetalsState) => {
-    const { country, borderCountriesNames, error } = selectedCountryDetalsState;
-    return { country, borderCountriesNames, error };
+    const { country, borderCountriesNames } = selectedCountryDetalsState;
+    return { country, borderCountriesNames };
   }
 );
 

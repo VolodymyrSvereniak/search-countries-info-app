@@ -12,6 +12,7 @@ const Container = styled.section`
 
   @media (max-width: 768px) {
     grid-template-columns: 100%;
+    grid-template-rows: 17.1875rem;
     gap: 0;
   }
 `;
@@ -24,7 +25,7 @@ const Flag = styled.img`
   border-radius: var(--radius);
 
   @media (max-width: 768px) {
-    height: 300px;
+    height: 13.75rem;
   }
 `;
 
@@ -56,11 +57,11 @@ const InfoList = styled.ul`
   flex-direction: column;
   list-style: none;
   font-size: var(--fs-sm);
-  padding: 10px 0 2.2rem;
+  padding: 0.625rem 0 2.2rem;
   gap: 1rem;
 
   @media (max-width: 768px) {
-    padding: 5px 0 2rem;
+    padding: 0.3125rem 0 2rem;
   }
 `;
 
@@ -83,6 +84,7 @@ const BorderCountries = styled.div`
   @media (max-width: 768px) {
     text-align: start;
     grid-template-columns: repeat(2, 127px);
+    gap: 0.5  rem;
   }
 `;
 

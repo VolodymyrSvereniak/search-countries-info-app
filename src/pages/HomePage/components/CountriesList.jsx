@@ -6,6 +6,7 @@ const Wrapper = styled.div`
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-content: center;
   gap: 4rem;
   
   @media (max-width: 1024px) {

@@ -68,7 +68,7 @@ const InfoItem = styled.li``;
 
 const InfoTag = styled.strong`
   place-self: center;
-  font-weight: var(--fw-normal);
+  font-weight: var(--fw-bold);
 `;
 
 const Info = styled.span``;
@@ -82,7 +82,7 @@ const BorderCountries = styled.div`
 
   @media (max-width: 768px) {
     text-align: start;
-    grid-template-columns: repeat(2, 130px);
+    grid-template-columns: repeat(2, 127px);
   }
 `;
 

@@ -43,6 +43,7 @@ const CustomSelect = styled(Select).attrs({
     menu: (provided) => ({
       ...provided,
       backgroundColor: "var(--colors-bg)",
+      boxShadow: "var(--shadow)",
       height: "10.75rem",
       width: "15.40rem"
     }),

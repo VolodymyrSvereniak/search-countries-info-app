@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Wrapper = styled.article`
   width: 15.4rem;
@@ -9,7 +10,7 @@ const Wrapper = styled.article`
   overflow: hidden;
 `;
 
-const CardImage = styled.img`
+const CardImage = styled(LazyLoadImage)`
   display: block;
   width: 100%;
   height: 9.1875rem;

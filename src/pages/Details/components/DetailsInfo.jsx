@@ -137,7 +137,7 @@ export default function DetailsInfo({
 
   return (
     <Container>
-      <Flag src={img} />
+      <Flag src={img} alt={name}/>
       <InfoWrapper>
         <CountryName>{name}</CountryName>
         <InfoGroup>

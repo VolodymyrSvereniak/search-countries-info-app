@@ -6,12 +6,18 @@ import {
   getBorderCountryDetails,
   selectedCountryDetails,
 } from "../../../slices/countriesSlice/countryDetailsSlice";
-import DetailsInfo from "./DetailsInfo";
+import { lazy, Suspense } from "react";
+import { LoadingDots } from "../../../components/Loader";
+
+
+const DetailsInfo = lazy(() => import("./DetailsInfo"));
 
 const Info = () => {
   const dispatch = useDispatch();
   const { name } = useParams();
-  const { country, borderCountriesNames } = useSelector(selectedCountryDetails);
+  const { country, status, borderCountriesNames } = useSelector(
+    selectedCountryDetails
+  );
   console.log(country);
 
   const countryInfo = country.map((c) => ({
@@ -36,13 +42,20 @@ const Info = () => {
     dispatch(getCountryDetails(name));
   }, [name, dispatch]);
 
-
   return (
-    <DetailsInfo
-      {...countryInfo[0]}
-      handleBorderCountry={handleBorderCountry}
-      borderCountriesNames={borderCountriesNames}
-    />
+    <>
+      {status === "loading" ? (
+        <LoadingDots />
+      ) : (
+        <Suspense fallback={<LoadingDots />}>
+          <DetailsInfo
+            {...countryInfo[0]}
+            handleBorderCountry={handleBorderCountry}
+            borderCountriesNames={borderCountriesNames}
+          />
+        </Suspense>
+      )}
+    </>
   );
 };
 

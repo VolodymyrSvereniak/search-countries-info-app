@@ -90,9 +90,9 @@ const countryDetailsSelector = (state) => state.countryDetails;
 
 export const selectedCountryDetails = createSelector(
   countryDetailsSelector,
-  (selectedCountryDetalsState) => {
-    const { country, borderCountriesNames } = selectedCountryDetalsState;
-    return { country, borderCountriesNames };
+  (selectedCountryDetailsState) => {
+    const { country, status, borderCountriesNames } = selectedCountryDetailsState;
+    return { country, status, borderCountriesNames };
   }
 );
 

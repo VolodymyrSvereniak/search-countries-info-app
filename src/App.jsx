@@ -2,7 +2,7 @@ import Header from "./pages/Header/Header";
 import Main from "./components/Main";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import LoadingCircle from "./components/LoadingCircle";
+import { LoadingDots } from "./components/Loader";
 
 const Details = lazy(() => import("./pages/Details/Details"));
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -17,7 +17,7 @@ function App() {
           <Route
             path="/"
             element={
-              <Suspense fallback={<LoadingCircle />}>
+              <Suspense fallback={<LoadingDots />}>
                 <HomePage />
               </Suspense>
             }
@@ -25,7 +25,7 @@ function App() {
           <Route
             path="/details/:name"
             element={
-              <Suspense fallback={<LoadingCircle />}>
+              <Suspense fallback={<LoadingDots />}>
                 <Details />
               </Suspense>
             }

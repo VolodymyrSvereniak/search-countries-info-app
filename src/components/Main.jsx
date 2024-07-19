@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container } from "./Container";
+import { ContentContainer } from "./Container";
 
 const Wrapper = styled.main`
   padding: 3rem 0;
@@ -12,7 +12,7 @@ const Wrapper = styled.main`
 export default function Main({ children }) {
   return (
     <Wrapper>
-      <Container>{children}</Container>
+      <ContentContainer>{children}</ContentContainer>
     </Wrapper>
   );
 }

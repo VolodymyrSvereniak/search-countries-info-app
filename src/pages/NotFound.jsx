@@ -1,12 +1,6 @@
 import styled from "styled-components";
+import { CenteringContainer } from "../components/Container";
 import { Link } from "react-router-dom";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
 const Title = styled.h1`
   font-size: 5rem;
@@ -30,10 +24,10 @@ const HomeButton = styled(Link)`
 
 export default function NotFound() {
   return (
-    <Container>
+    <CenteringContainer>
       <Title>404</Title>
       <Description>Page Not Found</Description>
       <HomeButton to="/">Go to Home</HomeButton>
-    </Container>
+    </CenteringContainer>
   );
 }

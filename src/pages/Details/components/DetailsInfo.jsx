@@ -84,7 +84,7 @@ const BorderCountries = styled.div`
   @media (max-width: 768px) {
     text-align: start;
     grid-template-columns: repeat(2, 127px);
-    gap: 0.5  rem;
+    gap: 0.5rem;
   }
 `;
 

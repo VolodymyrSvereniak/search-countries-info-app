@@ -8,17 +8,19 @@ import {
 } from "../../../slices/countriesSlice/countryDetailsSlice";
 import { lazy, Suspense } from "react";
 import { LoadingDots } from "../../../components/Loader";
-
+import OfflinePage from "../../OfflinePage";
+import { useNetwork } from "../../../Hooks/useNetwork";
 
 const DetailsInfo = lazy(() => import("./DetailsInfo"));
 
 const Info = () => {
+  const isOnline = useNetwork();
   const dispatch = useDispatch();
   const { name } = useParams();
   const { country, status, borderCountriesNames } = useSelector(
     selectedCountryDetails
   );
-  console.log(country);
+  console.log(isOnline);
 
   const countryInfo = country.map((c) => ({
     img: c.flags.png,
@@ -42,11 +44,13 @@ const Info = () => {
     dispatch(getCountryDetails(name));
   }, [name, dispatch]);
 
+  if (status === "loading") {
+    return <LoadingDots />;
+  }
+
   return (
     <>
-      {status === "loading" ? (
-        <LoadingDots />
-      ) : (
+      {isOnline ? (
         <Suspense fallback={<LoadingDots />}>
           <DetailsInfo
             {...countryInfo[0]}
@@ -54,6 +58,8 @@ const Info = () => {
             borderCountriesNames={borderCountriesNames}
           />
         </Suspense>
+      ) : (
+        <OfflinePage />
       )}
     </>
   );

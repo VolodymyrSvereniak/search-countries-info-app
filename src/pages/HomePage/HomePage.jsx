@@ -8,8 +8,11 @@ import {
   getCountries,
   selectedCountries,
 } from "../../slices/countriesSlice/countriesSlice";
+import { useNetwork } from "../../Hooks/useNetwork";
+import OfflinePage from "../OfflinePage";
 
 export default function HomePage() {
+  const isOnline = useNetwork();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { filteredCountries } = useSelector(selectedCountries);
@@ -23,11 +26,17 @@ export default function HomePage() {
       dispatch(getCountries());
     }
   }, [filteredCountries, dispatch]);
-  
+
   return (
     <>
-      <Controls />
-      <CountriesList>{countriesCardList}</CountriesList>
+      {isOnline ? (
+        <>
+          <Controls />
+          <CountriesList>{countriesCardList}</CountriesList>
+        </>
+      ) : (
+        <OfflinePage />
+      )}
     </>
   );
 }

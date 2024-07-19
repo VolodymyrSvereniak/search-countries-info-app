@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { IoMoon, IoMoonOutline } from "react-icons/io5";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { Container } from "../../components/Container";
+import { ContentContainer } from "../../components/Container";
 import { currentTheme, toggleTheme } from "../../slices/themeSlice";
 import { Link } from "react-router-dom";
 import { getCountries } from "../../slices/countriesSlice/countriesSlice";
@@ -62,7 +62,7 @@ export default function Header() {
 
   return (
     <HeaderElement>
-      <Container>
+      <ContentContainer>
         <Wrapper>
           <Title onClick={handleCountriesReset}>Where in the world?</Title>
           <ThemeSwitcher onClick={() => dispatch(toggleTheme())}>
@@ -76,7 +76,7 @@ export default function Header() {
             <span>{theme} Theme</span>
           </ThemeSwitcher>
         </Wrapper>
-      </Container>
+      </ContentContainer>
     </HeaderElement>
   );
 }

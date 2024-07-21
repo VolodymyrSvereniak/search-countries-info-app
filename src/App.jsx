@@ -6,7 +6,7 @@ import { LoadingDots } from "./components/Loader";
 
 const Details = lazy(() => import("./pages/Details/Details"));
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const NotFound = lazy(() => import("./pages/Errors/NotFound"));
 
 function App() {
   return (

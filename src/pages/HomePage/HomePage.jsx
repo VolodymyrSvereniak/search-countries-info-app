@@ -9,7 +9,7 @@ import {
   selectedCountries,
 } from "../../slices/countriesSlice/countriesSlice";
 import { useNetwork } from "../../Hooks/useNetwork";
-import OfflinePage from "../OfflinePage";
+import OfflinePage from "../Errors/OfflinePage";
 
 export default function HomePage() {
   const isOnline = useNetwork();

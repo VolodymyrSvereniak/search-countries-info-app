@@ -8,10 +8,10 @@ import {
 } from "../../../slices/countriesSlice/countryDetailsSlice";
 import { lazy, Suspense } from "react";
 import { LoadingDots } from "../../../components/Loader";
-import OfflinePage from "../../OfflinePage";
+import OfflinePage from "../../Errors/OfflinePage";
 import { useNetwork } from "../../../Hooks/useNetwork";
 
-const DetailsInfo = lazy(() => import("./DetailsInfo"));
+const DetailsInfo = lazy(() => import("./DetailsInfo/DetailsInfo"));
 
 const Info = () => {
   const isOnline = useNetwork();

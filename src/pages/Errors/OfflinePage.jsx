@@ -1,5 +1,5 @@
 import { RiWifiOffLine } from "react-icons/ri";
-import { CenteringContainer } from "../components/Container";
+import { CenteringContainer } from "../../components/Container";
 import styled from "styled-components";
 
 const ConnectionIcon = styled(RiWifiOffLine)`

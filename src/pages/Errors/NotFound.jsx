@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CenteringContainer } from "../components/Container";
+import { CenteringContainer } from "../../components/Container";
 import { Link } from "react-router-dom";
 
 const Title = styled.h1`

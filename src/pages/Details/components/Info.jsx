@@ -20,7 +20,6 @@ const Info = () => {
   const { country, status, borderCountriesNames } = useSelector(
     selectedCountryDetails
   );
-  console.log(isOnline);
 
   const countryInfo = country.map((c) => ({
     img: c.flags.png,

@@ -1,12 +1,12 @@
-import Header from "./pages/Header/Header";
-import Main from "./components/Main";
+import Header from "../pages/Header/Header";
+import Main from "../components/Main";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { LoadingDots } from "./components/Loader";
+import { LoadingDots } from "../components/Loader";
 
-const Details = lazy(() => import("./pages/Details/Details"));
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const NotFound = lazy(() => import("./pages/Errors/NotFound"));
+const Details = lazy(() => import("../pages/Details/Details"));
+const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
+const NotFound = lazy(() => import("../pages/Errors/NotFound"));
 
 function App() {
   return (

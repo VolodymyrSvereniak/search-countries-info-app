@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render cards Card snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <article
+        class="sc-aYaIB YGarY"
+      >
+        <img
+          alt="Ukraine"
+          class="sc-gEvDqW bRQHKc"
+          src="https://flagcdn.com/w320/ua.png"
+        />
+        <div
+          class="sc-eqUzNf cOpjBe"
+        >
+          <h3
+            class="sc-fqkwJk iXqJUu"
+          >
+            Ukraine
+          </h3>
+          <ul
+            class="sc-dcJtft iOWBnM"
+          >
+            <li
+              class="sc-iGgVNO knpHwG"
+            >
+              <b
+                class="sc-gsFSjX jVlTiE"
+              >
+                Population
+                :
+              </b>
+               
+              44,134,693
+            </li>
+            <li
+              class="sc-iGgVNO knpHwG"
+            >
+              <b
+                class="sc-gsFSjX jVlTiE"
+              >
+                Region
+                :
+              </b>
+               
+              Europe
+            </li>
+            <li
+              class="sc-iGgVNO knpHwG"
+            >
+              <b
+                class="sc-gsFSjX jVlTiE"
+              >
+                Capital
+                :
+              </b>
+               
+              Kyiv
+            </li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </body>,
+  "container": <div>
+    <article
+      class="sc-aYaIB YGarY"
+    >
+      <img
+        alt="Ukraine"
+        class="sc-gEvDqW bRQHKc"
+        src="https://flagcdn.com/w320/ua.png"
+      />
+      <div
+        class="sc-eqUzNf cOpjBe"
+      >
+        <h3
+          class="sc-fqkwJk iXqJUu"
+        >
+          Ukraine
+        </h3>
+        <ul
+          class="sc-dcJtft iOWBnM"
+        >
+          <li
+            class="sc-iGgVNO knpHwG"
+          >
+            <b
+              class="sc-gsFSjX jVlTiE"
+            >
+              Population
+              :
+            </b>
+             
+            44,134,693
+          </li>
+          <li
+            class="sc-iGgVNO knpHwG"
+          >
+            <b
+              class="sc-gsFSjX jVlTiE"
+            >
+              Region
+              :
+            </b>
+             
+            Europe
+          </li>
+          <li
+            class="sc-iGgVNO knpHwG"
+          >
+            <b
+              class="sc-gsFSjX jVlTiE"
+            >
+              Capital
+              :
+            </b>
+             
+            Kyiv
+          </li>
+        </ul>
+      </div>
+    </article>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Render cards Empty card snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <article
+        class="sc-aYaIB YGarY"
+      >
+        <img
+          class="sc-gEvDqW bRQHKc"
+        />
+        <div
+          class="sc-eqUzNf cOpjBe"
+        >
+          <h3
+            class="sc-fqkwJk iXqJUu"
+          />
+          <ul
+            class="sc-dcJtft iOWBnM"
+          />
+        </div>
+      </article>
+    </div>
+  </body>,
+  "container": <div>
+    <article
+      class="sc-aYaIB YGarY"
+    >
+      <img
+        class="sc-gEvDqW bRQHKc"
+      />
+      <div
+        class="sc-eqUzNf cOpjBe"
+      >
+        <h3
+          class="sc-fqkwJk iXqJUu"
+        />
+        <ul
+          class="sc-dcJtft iOWBnM"
+        />
+      </div>
+    </article>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

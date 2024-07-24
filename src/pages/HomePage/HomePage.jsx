@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Controls from "./components/Controls";
 import CountriesList from "./components/CountriesList";
-import { countriesCard } from "./components/countriesCard/countriesCard";
+import countriesCard from "./components/countriesCard/countriesCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -15,7 +15,7 @@ export default function HomePage() {
   const isOnline = useNetwork();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { filteredCountries } = useSelector(selectedCountries);
+  const { filteredCountries = [] } = useSelector(selectedCountries);
 
   const handleNavigate = (name) => navigate(`/details/${name}`);
 

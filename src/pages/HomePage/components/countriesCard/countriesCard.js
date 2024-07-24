@@ -1,6 +1,6 @@
 import Card from "./Card/Card";
 
-export const countriesCard = (countries, handleNavigate) =>
+const countriesCard = (countries, handleNavigate) =>
   countries?.map((country) => {
     const countriesInfo = {
       img: country.flags.png,
@@ -23,3 +23,5 @@ export const countriesCard = (countries, handleNavigate) =>
     };
     return <Card key={country.cca3} {...countriesInfo} />;
   });
+
+export default countriesCard;

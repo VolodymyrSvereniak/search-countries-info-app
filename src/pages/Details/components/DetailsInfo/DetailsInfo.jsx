@@ -31,25 +31,28 @@ export default function DetailsInfo({
   borderCountriesNames = [],
 }) {
   const dispatch = useDispatch();
+
   const nativeNameDestructure = Object.values(nativeName)?.map(
     (native) => native.common
   );
+
   const nativeNameValue = nativeNameDestructure[0];
+
   const languagesDestructure = Object.values(languages).join(", ");
-  const bordersDestructure = (border) => {
-    return borderCountriesNames?.map((c) => {
-      if (c.cca3 == border) {
-        return c.name.common;
-      }
-    });
-  };
+
   const currenciesDestructure = Object.values(Object.values(currencies))
     .map((c) => c.name)
     .join(", ");
 
+  const bordersDestructure = (border) => {
+    return borderCountriesNames?.map((c) => {
+      return c.cca3 === border ? c.name.common : '';
+    });
+  };
+
   useEffect(() => {
     dispatch(getBorderCountriesNames(borders?.join(",")));
-  }, [borders, dispatch, getBorderCountriesNames]);
+  }, [borders, dispatch]);
 
   return (
     <Container>

@@ -9,7 +9,7 @@ const InputContainer = styled.label`
 
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  width: 246px;
+  width: 15.43rem;
 
   @media (max-width: 768px) {
     margin-bottom: 1rem;
@@ -20,6 +20,7 @@ const Input = styled.input.attrs({
   type: "search",
   placeholder: "Search for a country...",
 })`
+  width: 100%;
   margin-left: 2rem;
   border: none;
   outline: none;

@@ -15,7 +15,7 @@ export const useNetwork = () => {
       window.removeEventListener("online", updateNetworkStatus);
       window.removeEventListener("offline", updateNetworkStatus);
     };
-  }, [navigator.onLine]);
+  }, []);
 
   return isOnline;
 };

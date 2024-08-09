@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-
 export const Wrapper = styled.article`
   width: 15.4rem;
   background-color: var(--colors-ui-base);
@@ -9,6 +8,11 @@ export const Wrapper = styled.article`
   box-shadow: var(--shadow);
   cursor: pointer;
   overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const CardImage = styled(LazyLoadImage)`

@@ -95,4 +95,10 @@ export const BorderCountry = styled.span`
   cursor: pointer;
   font-size: var(--fs-sm);
   font-weight: var(--fw-normal);
+
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
